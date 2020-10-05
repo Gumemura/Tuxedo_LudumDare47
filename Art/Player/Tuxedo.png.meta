@@ -4,10 +4,10 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -5604308283197716533
-    second: Tuxedo_0
+    second: Tuxedo_End
   - first:
       213: -4728940557342404828
-    second: Tuxedo_0
+    second: Tuxedo_End
   - first:
       213: 7888635613378475854
     second: Tuxedo_Walking_0
@@ -160,13 +160,112 @@ TextureImporter:
     second: Tuxedo_Walking_4
   - first:
       213: 7333234038397148036
-    second: Tuxedo_25
+    second: Tuxedo_Falling_0
   - first:
       213: -8743410845244586430
     second: Tuxedo_Walking_5
   - first:
       213: 2843330898687278442
-    second: Tuxedo_27
+    second: Tuxedo_Falling_1
+  - first:
+      213: -8783538974083067384
+    second: Tuxedo_Walking_0
+  - first:
+      213: 6554114647069367228
+    second: Tuxedo_4
+  - first:
+      213: -6924692850022988478
+    second: Tuxedo_Walking_1
+  - first:
+      213: 508216067362812225
+    second: Tuxedo_10
+  - first:
+      213: 7918944402294213730
+    second: Tuxedo_Walking_2
+  - first:
+      213: 1019015885630342780
+    second: Tuxedo_16
+  - first:
+      213: 623618433226031311
+    second: Tuxedo_Walking_3
+  - first:
+      213: -5326754267795302917
+    second: Tuxedo_21
+  - first:
+      213: 7619119676856046197
+    second: Tuxedo_23
+  - first:
+      213: -9071139224396810491
+    second: Tuxedo_Walking_4
+  - first:
+      213: 523307543502274304
+    second: Tuxedo_Falling_0
+  - first:
+      213: -1018411144415563238
+    second: Tuxedo_26
+  - first:
+      213: 5053813200298366988
+    second: Tuxedo_Falling_1
+  - first:
+      213: 46798568292947517
+    second: Tuxedo_Walking_5
+  - first:
+      213: 4869280999583170094
+    second: Tuxedo_29
+  - first:
+      213: -8783538974083067384
+    second: Tuxedo_Eye
+  - first:
+      213: 1989388842314164925
+    second: Tuxedo_4
+  - first:
+      213: -6924692850022988478
+    second: Tuxedo_Walking_1
+  - first:
+      213: -7907478722600708424
+    second: Tuxedo_10
+  - first:
+      213: 7918944402294213730
+    second: Tuxedo_Walking_2
+  - first:
+      213: 623618433226031311
+    second: Tuxedo_Walking_3
+  - first:
+      213: 3217495295395000007
+    second: Tuxedo_21
+  - first:
+      213: -9071139224396810491
+    second: Tuxedo_Walking_4
+  - first:
+      213: 7333234038397148036
+    second: Tuxedo_Falling_0
+  - first:
+      213: -8743410845244586430
+    second: Tuxedo_26
+  - first:
+      213: 2843330898687278442
+    second: Tuxedo_Falling_1
+  - first:
+      213: 46798568292947517
+    second: Tuxedo_Walking_5
+  - first:
+      213: 2468118202964147639
+    second: Tuxedo_29
+  - first:
+      213: 7888635613378475854
+    second: Tuxedo_Walking_0
+  - first:
+      213: -6924692850022988478
+    second: Tuxedo_Walking_1
+  - first:
+      213: -6924692850022988478
+    second: Tuxedo_Death
+  - first:
+      213: -4728940557342404828
+    second: Tuxedo_Walking_1
+  - first:
+      213: -5604308283197716533
+    second: Tuxedo_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -266,12 +365,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tuxedo_0
+      name: Tuxedo_Walking_1
       rect:
         serializedVersion: 2
-        x: 12
-        y: 155
-        width: 10
+        x: 53
+        y: 126
+        width: 12
         height: 15
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -287,13 +386,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tuxedo_Walking_0
+      name: Tuxedo_Eye
       rect:
         serializedVersion: 2
-        x: 53
-        y: 155
-        width: 11
-        height: 15
+        x: 222
+        y: 58
+        width: 1
+        height: 1
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -350,27 +449,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tuxedo_4
-      rect:
-        serializedVersion: 2
-        x: 173
-        y: 156
-        width: 16
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b8c9618bf870ff9b0800000000000000
-      internalID: -5044304743781458805
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Tuxedo_5
       rect:
         serializedVersion: 2
@@ -413,27 +491,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tuxedo_Walking_1
-      rect:
-        serializedVersion: 2
-        x: 53
-        y: 126
-        width: 12
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 24541bf9a8c86ef90800000000000000
-      internalID: -6924692850022988478
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Tuxedo_8
       rect:
         serializedVersion: 2
@@ -471,27 +528,6 @@ TextureImporter:
       bones: []
       spriteID: e3e68b26191209090800000000000000
       internalID: -8029881227291365826
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tuxedo_10
-      rect:
-        serializedVersion: 2
-        x: 173
-        y: 128
-        width: 16
-        height: 13
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7b8746fb28b511670800000000000000
-      internalID: 8507681788194486455
       vertices: []
       indices: 
       edges: []
@@ -602,27 +638,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tuxedo_16
-      rect:
-        serializedVersion: 2
-        x: 174
-        y: 100
-        width: 15
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d96b67c3d5d757260800000000000000
-      internalID: 7094714627391927965
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Tuxedo_17
       rect:
         serializedVersion: 2
@@ -707,27 +722,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tuxedo_AH
-      rect:
-        serializedVersion: 2
-        x: 132
-        y: 67
-        width: 13
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7ce62849ce6d6ac20800000000000000
-      internalID: 3217495295395000007
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Tuxedo_22
       rect:
         serializedVersion: 2
@@ -749,6 +743,27 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: Tuxedo_16
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 100
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c760a7b8c85442e00800000000000000
+      internalID: 1019015885630342780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: Tuxedo_23
       rect:
         serializedVersion: 2
@@ -763,8 +778,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f3419f1be22a08a0800000000000000
-      internalID: -6338215132328279056
+      spriteID: 57291307afc8cb960800000000000000
+      internalID: 7619119676856046197
       vertices: []
       indices: 
       edges: []
@@ -784,29 +799,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f53f7e19da9b1420800000000000000
-      internalID: 2601843467046827504
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tuxedo_25
-      rect:
-        serializedVersion: 2
-        x: 173
-        y: 38
-        width: 16
-        height: 13
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 48b17793181e4c560800000000000000
-      internalID: 7333234038397148036
+      spriteID: 50737b5bfe6dc1280800000000000000
+      internalID: -9071139224396810491
       vertices: []
       indices: 
       edges: []
@@ -826,6 +820,111 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+      spriteID: d361917cc0346a000800000000000000
+      internalID: 46798568292947517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuxedo_4
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 156
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbae242ac9abb9b10800000000000000
+      internalID: 1989388842314164925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuxedo_10
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 128
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b6dc665ffdf24290800000000000000
+      internalID: -7907478722600708424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuxedo_21
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 67
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ce62849ce6d6ac20800000000000000
+      internalID: 3217495295395000007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuxedo_Falling_0
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 44
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48b17793181e4c560800000000000000
+      internalID: 7333234038397148036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuxedo_26
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 38
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
       spriteID: 24606eb292a29a680800000000000000
       internalID: -8743410845244586430
       vertices: []
@@ -833,7 +932,28 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tuxedo_27
+      name: Tuxedo_Falling_1
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 25
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6db523436a857720800000000000000
+      internalID: 2843330898687278442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuxedo_29
       rect:
         serializedVersion: 2
         x: 174
@@ -847,8 +967,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6db523436a857720800000000000000
-      internalID: 2843330898687278442
+      spriteID: 7bd7a5fcd64804220800000000000000
+      internalID: 2468118202964147639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuxedo_Walking_0
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 155
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e477be96b401a7d60800000000000000
+      internalID: 7888635613378475854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuxedo_Death
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 6
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24541bf9a8c86ef90800000000000000
+      internalID: -6924692850022988478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tuxedo_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 155
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc788303f4f7932b0800000000000000
+      internalID: -5604308283197716533
       vertices: []
       indices: 
       edges: []
