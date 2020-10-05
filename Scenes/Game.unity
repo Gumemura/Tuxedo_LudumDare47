@@ -1426,7 +1426,7 @@ MonoBehaviour:
   monsterAcelerationLimit: 2
   monsterInitialAcceleration: 1.5
   timeChangeBack: 60
-  difficultModifier: 10
+  difficultModifier: 5
 --- !u!4 &1272746818 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5350118989413953462, guid: a6db8d438106d3d47ac448abef6bc7a9,

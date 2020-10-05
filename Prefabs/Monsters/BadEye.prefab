@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 3805802514114678030}
   - component: {fileID: 3805802514114678031}
   - component: {fileID: 5730191478279619053}
+  - component: {fileID: 1184163233}
   m_Layer: 0
   m_Name: BadEye
-  m_TagString: Monster
+  m_TagString: BadEye
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,3 +121,19 @@ CircleCollider2D:
   m_Offset: {x: 0.81, y: 0.26}
   serializedVersion: 2
   m_Radius: 0.8960979
+--- !u!114 &1184163233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3805802514114678028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33afbb76036a27b49a01d906b73b5d12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstStopX: -6.8
+  stopTime: 2
+  velocity: 2
+  acceleration: 4

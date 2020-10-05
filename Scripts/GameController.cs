@@ -65,6 +65,8 @@ public class GameController : MonoBehaviour
 	public float monsterInitialAcceleration = 1.5f;
 	private float monsterAcceleration;
 	private string monsterTag = "Monster";
+	private string badEyeTag = "BadEye";
+
 
 	[Header("Time control")]
 	//Time interval to change the background color
@@ -153,9 +155,22 @@ public class GameController : MonoBehaviour
 		}
 	}
 
+	void BadEyeSpawn(){
+		int badEyeX;
+		if(Random.Range(0,2) == 0){
+			badEyeX = -1;
+		}else{
+			badEyeX = 1;
+		}
+
+		InstantiateObj(badEye, Random.Range(-3.5f, 3.5f), 10 * badEyeX);
+	}
+
 	void MovesObject(Transform transf, float plusAceleration = 1){
 		if(transf.gameObject.tag == monsterTag){
 			plusAceleration = monsterAcceleration;
+		}else if(transf.gameObject.tag == badEyeTag){
+			plusAceleration = 0;
 		}
 		transf.position += new Vector3(0, globalVelocity * plusAceleration, 0) * Time.deltaTime; 
 	}
@@ -270,6 +285,7 @@ public class GameController : MonoBehaviour
 
 		InvokeRepeating("MonsterSpawn", 3.0f, 1.0f);
 		InvokeRepeating("StructureSpawn", 3.0f, 2.0f);
+		InvokeRepeating("BadEyeSpawn", difficultModifier * 3, 10.0f);
 	}
 
 	void Update(){
