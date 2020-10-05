@@ -11,6 +11,7 @@ public class InitialPlayerMovement : MonoBehaviour
 	public Vector2 yLimit;
 	public float inGameVelocity;
 	public Sprite theEndSprite;
+	public float energyRaiseByCoin;
 
 	private bool hitRock = false;
 	private Rigidbody2D rb2d;
@@ -20,6 +21,7 @@ public class InitialPlayerMovement : MonoBehaviour
 	private bool imAlive = true;
 	private Transform eyes;
 	private GameObject gameController;
+	private string coinTag = "Coin";
 
 	void MoveTotheLeft(){
 		transform.position += new Vector3(initialVelocity, 0, 0) * Time.deltaTime;
@@ -53,10 +55,6 @@ public class InitialPlayerMovement : MonoBehaviour
 		if(!gameIntro && imAlive){
 			Movement();
 		}
-
-		// if(!imAlive){
-		// 	DeathAnimations();
-		// }
 	}
 
 	void Death(){
@@ -104,6 +102,7 @@ public class InitialPlayerMovement : MonoBehaviour
 		}
 	}
 
+
 	void OnTriggerEnter2D(Collider2D col){
 		if(col.gameObject.name == "Rock"){
 			anim.enabled = false;
@@ -111,6 +110,8 @@ public class InitialPlayerMovement : MonoBehaviour
 			rb2d.AddForce(force);
 			rb2d.gravityScale = 1;
 			hitRock = true;
+		}else if(col.gameObject.tag == coinTag){
+			GameController.ModifyEnergyBar(energyRaiseByCoin);
 		}else{
 			Death();
 		}

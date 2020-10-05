@@ -23,6 +23,13 @@ public class GameController : MonoBehaviour
 	public float globalAceleration;
 	public GameObject pauseMenu;
 
+	[Header("Coin")]
+	public GameObject coinObj;
+	public float energyLost;
+	public float chanceSpawnCoin = 2;
+	[HideInInspector]
+	public bool slowTime = false;
+
 	//Variables related to the background color change
 	//Yes, is terible, i know. It was my first time dealing with Color, so give me a discount hehe
 	//To do: convert this terible floats to integer
@@ -67,7 +74,6 @@ public class GameController : MonoBehaviour
 	private string monsterTag = "Monster";
 	private string badEyeTag = "BadEye";
 
-
 	[Header("Time control")]
 	//Time interval to change the background color
 	public float timeChangeBack;
@@ -104,7 +110,7 @@ public class GameController : MonoBehaviour
 	}
 
 	void BreakObjectsMovement(){
-		if(globalVelocity > -limitGlobalVelocity){
+		if(globalVelocity > .5f){
 			globalVelocity -= globalAceleration;
 		}
 	}
@@ -127,14 +133,16 @@ public class GameController : MonoBehaviour
 	void MonsterSpawn(){
 		if(Random.Range(0, 10) < chanceSpawnMonster){
 			float enemyX = Random.Range(spawnLimitX.x, spawnLimitX.y);
-			InstantiateObj(flamingSkull, spawnEnemyY, Random.Range(spawnLimitX.x, spawnLimitX.y));
 
-			if(dificultRating > 5){
-				InstantiateObj(flamingSkull, spawnEnemyY - spaceBetweenMonsters, Random.Range(spawnLimitX.x, spawnLimitX.y));
-			}
+			if(!slowTime){
+				InstantiateObj(flamingSkull, spawnEnemyY, Random.Range(spawnLimitX.x, spawnLimitX.y));
+				if(dificultRating > 10){
+					InstantiateObj(flamingSkull, spawnEnemyY - spaceBetweenMonsters, Random.Range(spawnLimitX.x, spawnLimitX.y));
+				}
 
-			if(dificultRating > 10){
-				InstantiateObj(flamingSkull, spawnEnemyY - spaceBetweenMonsters * 2, Random.Range(spawnLimitX.x, spawnLimitX.y));
+				if(dificultRating > 20){
+					InstantiateObj(flamingSkull, spawnEnemyY - spaceBetweenMonsters * 2, Random.Range(spawnLimitX.x, spawnLimitX.y));
+				}
 			}
 		}
 	}
@@ -265,10 +273,24 @@ public class GameController : MonoBehaviour
 		}
 	}
 
+	public static float ModifyEnergyBar(float modification){
+		Transform energyBar = GameObject.Find("Energy").transform;
+		float energyVariation = energyBar.localScale.y + modification * Time.deltaTime;
+		energyVariation = Mathf.Clamp(energyVariation, 0, 27.0f);
+		energyBar.localScale = new Vector3(energyBar.localScale.x, energyVariation, 0);
+		return energyVariation;
+	}
+
 	void IndexColorSetter(){
 		actualColor++;
 		if(actualColor == backColors.Length){
 			actualColor = 0;
+		}
+	}
+
+	void SpawnCoin(){
+		if(Random.Range(0,10) < chanceSpawnCoin){
+			InstantiateObj(coinObj, spawnEnemyY, Random.Range(spawnLimitX.x, spawnLimitX.y));
 		}
 	}
 
@@ -286,6 +308,8 @@ public class GameController : MonoBehaviour
 		InvokeRepeating("MonsterSpawn", 3.0f, 1.0f);
 		InvokeRepeating("StructureSpawn", 3.0f, 2.0f);
 		InvokeRepeating("BadEyeSpawn", difficultModifier * 3, 10.0f);
+		InvokeRepeating("SpawnCoin", 3.0f, 1.0f);
+
 	}
 
 	void Update(){
@@ -295,16 +319,19 @@ public class GameController : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate()
 	{
-		// if(Input.GetKey(KeyCode.Space)){
-		// 	BreakObjectsMovement();
-		// }else{
-		// }
 
 		if(gameRunning){
+			if(Input.GetKey(KeyCode.Space) && ModifyEnergyBar(energyLost) > 0){
+				BreakObjectsMovement();
+				slowTime = true;
+			}else{
+				slowTime = false;
+				AcelerateObjectsMovement();
+			}
+
 			TimeManager();
 			BackgroundChanger(actualColor);
 
-			AcelerateObjectsMovement();
 			foreach (Transform child in transform){
 				MovesObject(child);
 				Destroyer(child);

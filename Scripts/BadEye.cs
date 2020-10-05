@@ -48,10 +48,19 @@ public class BadEye : MonoBehaviour
 	}
 
 	void MoveBadEye(bool direction, float acele = 1){
-		int inversor = -1;
+		bool isSlow = GameObject.Find("GameControler").GetComponent<GameController>().slowTime;
+		float inversor = -1;
+
 		if(direction){
 			inversor = 1;
 		}  
+
+		if(isSlow){
+			inversor = .1f * Mathf.Sign(inversor);
+		}else{
+			inversor = 1 * Mathf.Sign(inversor);
+		}
+
 		transform.position += new Vector3(xVelocity, yVelocity, 0) * inversor * velocity * acele * Time.deltaTime;
 	}
 
