@@ -143,6 +143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b4b7e5952cc5b14f99af9c192e81229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hFrequence: {x: 1, y: 8}
-  hAmplitude: {x: 1, y: 8}
-  floatingChance: 10
+  hFrequence: {x: 1, y: 4}
+  hAmplitude: {x: 1, y: 4}
+  floatingChance: 1

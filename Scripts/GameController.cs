@@ -21,6 +21,7 @@ public class GameController : MonoBehaviour
 	//Velocity
 	public float limitGlobalVelocity;
 	public float globalAceleration;
+	public GameObject pauseMenu;
 
 	//Variables related to the background color change
 	//Yes, is terible, i know. It was my first time dealing with Color, so give me a discount hehe
@@ -76,6 +77,18 @@ public class GameController : MonoBehaviour
 		globalVelocity = 0;
 	}
 
+	public void QuitGame(){
+		Application.Quit();
+	}
+
+	void PauseGame(){
+		if(Input.GetKeyDown(KeyCode.Escape)){
+			pauseMenu.SetActive(!pauseMenu.activeSelf);
+
+			Time.timeScale = Time.timeScale + 1 + (- 2 * Time.timeScale);
+		}
+	}
+
 	public void Restart(){
 		SceneManager.LoadScene(1);
 	}
@@ -89,10 +102,8 @@ public class GameController : MonoBehaviour
 	}
 
 	void BreakObjectsMovement(){
-		if(globalVelocity > 0){
+		if(globalVelocity > -limitGlobalVelocity){
 			globalVelocity -= globalAceleration;
-		}else{
-			globalVelocity = 0;
 		}
 	}
 
@@ -168,7 +179,7 @@ public class GameController : MonoBehaviour
 	}
 
 	void TimeManager(){
-		int seconds = (int)(Time.time);
+		int seconds = (int)(Time.timeSinceLevelLoad);
 		if(seconds >= tempTimerChangeBack){
 			IndexColorSetter();
 			callBackgroundChanger = true;
@@ -261,14 +272,23 @@ public class GameController : MonoBehaviour
 		InvokeRepeating("StructureSpawn", 3.0f, 2.0f);
 	}
 
+	void Update(){
+		PauseGame();
+	}
+
 	// Update is called once per frame
 	void FixedUpdate()
 	{
+		// if(Input.GetKey(KeyCode.Space)){
+		// 	BreakObjectsMovement();
+		// }else{
+		// }
+
 		if(gameRunning){
 			TimeManager();
 			BackgroundChanger(actualColor);
-			AcelerateObjectsMovement();
 
+			AcelerateObjectsMovement();
 			foreach (Transform child in transform){
 				MovesObject(child);
 				Destroyer(child);
