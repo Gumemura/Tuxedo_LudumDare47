@@ -26,7 +26,7 @@ public class BadEye : MonoBehaviour
 			firstStopX *= -1;
 		}
 
-		yVelocity = Random.Range(.0f, .2f);
+		yVelocity = Random.Range(.0f, .4f);
 		xVelocity = 1.0f - yVelocity;
 	}
 

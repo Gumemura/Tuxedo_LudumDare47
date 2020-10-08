@@ -878,6 +878,85 @@ Transform:
   m_Father: {fileID: 1725058038}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &726589948
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 726589949}
+  - component: {fileID: 726589951}
+  - component: {fileID: 726589950}
+  m_Layer: 5
+  m_Name: space
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &726589949
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726589948}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1547280603}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 87}
+  m_SizeDelta: {x: 213.06793, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &726589950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726589948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: f76394640c5adcd4ea7a061e4e9ff571, type: 3}
+    m_FontSize: 33
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Press space TO
+--- !u!222 &726589951
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726589948}
+  m_CullTransparentMesh: 0
 --- !u!1001 &861484611
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1430,7 +1509,7 @@ MonoBehaviour:
   monsterAcelerationLimit: 2
   monsterInitialAcceleration: 1.5
   timeChangeBack: 60
-  difficultModifier: 20
+  difficultModifier: 18
 --- !u!4 &1272746818 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5350118989413953462, guid: a6db8d438106d3d47ac448abef6bc7a9,
@@ -1650,6 +1729,7 @@ GameObject:
   - component: {fileID: 1547280606}
   - component: {fileID: 1547280605}
   - component: {fileID: 1547280604}
+  - component: {fileID: 1547280607}
   m_Layer: 5
   m_Name: Restart
   m_TagString: Untagged
@@ -1670,6 +1750,7 @@ RectTransform:
   m_Children:
   - {fileID: 35680843}
   - {fileID: 286889088}
+  - {fileID: 726589949}
   m_Father: {fileID: 1701802682}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1721,9 +1802,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1269009380}
-        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
-        m_MethodName: Restart
+      - m_Target: {fileID: 1547280607}
+        m_TargetAssemblyTypeName: Restart, Assembly-CSharp
+        m_MethodName: RestartCall
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1771,6 +1852,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1547280602}
   m_CullTransparentMesh: 0
+--- !u!114 &1547280607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547280602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e07cf420615ac642bb89131266cf0e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1553094143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2217,7 +2310,7 @@ MonoBehaviour:
   fallingSprite: {fileID: -4852936802939803137, guid: a459da2cc49bc144c897204a8f97563b,
     type: 3}
   yLimit: {x: 4, y: -4}
-  inGameVelocity: 15
+  inGameVelocity: 7
   theEndSprite: {fileID: -6924692850022988478, guid: a459da2cc49bc144c897204a8f97563b,
     type: 3}
   energyRaiseByCoin: 150

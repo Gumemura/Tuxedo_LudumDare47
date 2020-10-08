@@ -77,9 +77,9 @@ public class InitialPlayerMovement : MonoBehaviour
 	}
 
 	void Movement(){
-		if(Input.GetAxis("Horizontal") != 0){
-			transform.position += new Vector3(Input.GetAxis("Horizontal"), 0, 0) * Time.deltaTime * inGameVelocity;
-			if(Input.GetAxis("Horizontal") > 0){
+		if(Input.GetAxisRaw("Horizontal") != 0){
+			transform.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0) * Time.deltaTime * inGameVelocity;
+			if(Input.GetAxisRaw("Horizontal") > 0){
 				eyes.localPosition = new Vector3(.1f, eyes.localPosition.y, 0);
 			}else{
 				eyes.localPosition = new Vector3(-.1f, eyes.localPosition.y, 0);
@@ -88,11 +88,11 @@ public class InitialPlayerMovement : MonoBehaviour
 			eyes.localPosition = new Vector3(0, eyes.localPosition.y, 0);
 		}
 
-		if(Input.GetAxis("Vertical") != 0){
-			if((Input.GetAxis("Vertical") > 0 && transform.position.y < yLimit.x) || (Input.GetAxis("Vertical") < 0 && transform.position.y > yLimit.y)){
-				transform.position += new Vector3(0, Input.GetAxis("Vertical"), 0) * Time.deltaTime * inGameVelocity;
+		if(Input.GetAxisRaw("Vertical") != 0){
+			if((Input.GetAxisRaw("Vertical") > 0 && transform.position.y < yLimit.x) || (Input.GetAxisRaw("Vertical") < 0 && transform.position.y > yLimit.y)){
+				transform.position += new Vector3(0, Input.GetAxisRaw("Vertical"), 0) * Time.deltaTime * inGameVelocity;
 			}
-			if(Input.GetAxis("Vertical") > 0){
+			if(Input.GetAxisRaw("Vertical") > 0){
 				eyes.localPosition = new Vector3(eyes.localPosition.x, .1f, 0);
 			}else{
 				eyes.localPosition = new Vector3(eyes.localPosition.x, -.1f, 0);
@@ -101,7 +101,6 @@ public class InitialPlayerMovement : MonoBehaviour
 			eyes.localPosition = new Vector3(eyes.localPosition.x, 0, 0);
 		}
 	}
-
 
 	void OnTriggerEnter2D(Collider2D col){
 		if(col.gameObject.name == "Rock"){

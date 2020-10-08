@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class GameController : MonoBehaviour
@@ -95,10 +94,6 @@ public class GameController : MonoBehaviour
 
 			Time.timeScale = Time.timeScale + 1 + (- 2 * Time.timeScale);
 		}
-	}
-
-	public void Restart(){
-		SceneManager.LoadScene(1);
 	}
 
 	void AcelerateObjectsMovement(){
@@ -290,7 +285,7 @@ public class GameController : MonoBehaviour
 
 	void SpawnCoin(){
 		if(Random.Range(0,10) < chanceSpawnCoin){
-			InstantiateObj(coinObj, spawnEnemyY, Random.Range(spawnLimitX.x, spawnLimitX.y));
+			InstantiateObj(coinObj, spawnEnemyY + 2, Random.Range(spawnLimitX.x, spawnLimitX.y));
 		}
 	}
 
@@ -319,7 +314,6 @@ public class GameController : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate()
 	{
-
 		if(gameRunning){
 			if(Input.GetKey(KeyCode.Space) && ModifyEnergyBar(energyLost) > 0){
 				BreakObjectsMovement();
